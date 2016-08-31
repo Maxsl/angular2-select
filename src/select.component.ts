@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, Provider, ViewChild, forwardRef} from '@angular/core';
+import {Component, Input, Output, OnChanges, OnInit, Provider, ViewChild, forwardRef, EventEmitter} from '@angular/core';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 
 import {DEFAULT_STYLES} from './style';
@@ -105,6 +105,9 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
     @Input() placeholder: string;
     @Input() allowClear: boolean;
 
+    @Output() public onClick: EventEmitter<any> = new EventEmitter();
+    @Output() public onValueSelected: EventEmitter<any> = new EventEmitter();
+
     @ViewChild('container') container: any;
     @ViewChild('selectionSpan') selectionSpan: any;
     @ViewChild('dropdown') dropdown: SelectDropdownComponent;
@@ -149,6 +152,11 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
             this.searchInput.nativeElement.focus();
         }
         event.stopPropagation();
+
+        this.onClick.emit({
+            value: 'click'
+        });
+
     }
 
     onClearAllClick(event: any) {
