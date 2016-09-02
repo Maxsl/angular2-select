@@ -1,29 +1,68 @@
 {
-  "name": "angular2-select",
-  "version": "1.0.0-alpha.4",
-  "description": "Select component for Angular 2 (based on select2 JQuery plugin).",
-  "main": "./index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/basvandenberg/angular2-select.git"
-  },
-  "keywords": [
-    "angular",
-    "angular2",
-    "select",
-    "select2",
-    "selectize",
-    "chosen"
+  "_args": [
+    [
+      {
+        "raw": "angular2-select@git://github.com/madwebs/angular2-select.git",
+        "scope": null,
+        "escapedName": "angular2-select",
+        "name": "angular2-select",
+        "rawSpec": "git://github.com/madwebs/angular2-select.git",
+        "spec": "git://github.com/madwebs/angular2-select.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:madwebs/angular2-select.git",
+          "sshUrl": "git+ssh://git@github.com/madwebs/angular2-select.git",
+          "httpsUrl": "git+https://github.com/madwebs/angular2-select.git",
+          "gitUrl": "git://github.com/madwebs/angular2-select.git",
+          "shortcut": "github:madwebs/angular2-select",
+          "directUrl": "https://raw.githubusercontent.com/madwebs/angular2-select/master/package.json"
+        }
+      },
+      "/Users/martinolessio/WorkSpaces/WebDev/madcommerce/public/backend/dev/newengine/ng"
+    ]
   ],
-  "author": "Bastiaan van den Berg <b.a.vandenberg@gmail.com>",
-  "license": "ISC",
+  "_from": "git://github.com/madwebs/angular2-select.git",
+  "_id": "angular2-select@1.0.0-alpha.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular2-select",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular2-select@git://github.com/madwebs/angular2-select.git",
+    "scope": null,
+    "escapedName": "angular2-select",
+    "name": "angular2-select",
+    "rawSpec": "git://github.com/madwebs/angular2-select.git",
+    "spec": "git://github.com/madwebs/angular2-select.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:madwebs/angular2-select.git",
+      "sshUrl": "git+ssh://git@github.com/madwebs/angular2-select.git",
+      "httpsUrl": "git+https://github.com/madwebs/angular2-select.git",
+      "gitUrl": "git://github.com/madwebs/angular2-select.git",
+      "shortcut": "github:madwebs/angular2-select",
+      "directUrl": "https://raw.githubusercontent.com/madwebs/angular2-select/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git://github.com/madwebs/angular2-select.git#a1b7fd4e6cafea25f3f69e8bd417fd47d5179398",
+  "_shasum": "c7b69647b443772926fface6df97893efc67ddf8",
+  "_shrinkwrap": null,
+  "_spec": "angular2-select@git://github.com/madwebs/angular2-select.git",
+  "_where": "/Users/martinolessio/WorkSpaces/WebDev/madcommerce/public/backend/dev/newengine/ng",
+  "author": {
+    "name": "Bastiaan van den Berg",
+    "email": "b.a.vandenberg@gmail.com"
+  },
   "bugs": {
     "url": "https://github.com/basvandenberg/angular2-select/issues"
   },
-  "homepage": "https://github.com/basvandenberg/angular2-select#readme",
+  "dependencies": {},
+  "description": "Select component for Angular 2 (based on select2 JQuery plugin).",
   "devDependencies": {
     "@angular/common": "2.0.0-rc.5",
     "@angular/compiler": "2.0.0-rc.5",
@@ -49,10 +88,33 @@
     "typescript": "^1.8.10",
     "zone.js": "^0.6.12"
   },
-  "dependencies": {},
+  "gitHead": "a1b7fd4e6cafea25f3f69e8bd417fd47d5179398",
+  "homepage": "https://github.com/basvandenberg/angular2-select#readme",
+  "keywords": [
+    "angular",
+    "angular2",
+    "select",
+    "select2",
+    "selectize",
+    "chosen"
+  ],
+  "license": "ISC",
+  "main": "./index.js",
+  "name": "angular2-select",
+  "optionalDependencies": {},
   "peerDependencies": {
     "@angular/core": "^2.0.0-rc.5",
     "@angular/common": "^2.0.0-rc.5",
     "@angular/forms": "^0.3.0"
-  }
+  },
+  "readme": "# Angular 2 select component\n\nA native select component for angular 2, based on the select2 JQuery plugin. The\ncomponent is currently in alpha, so breaking changes are to be expected.\n\n## Demo\n\nTry it out with this [plunker] or by cloning [angular2-select-demo].\n\n## Getting started\n\n### Install\n\n```\nnpm install --save angular2-select\n```\n\n### Configuration\n\n#### Systemjs\n\nIn `systemjs.config.js` add `angular2-select` to map and package:\n\n```javascript\nvar map = {\n\t// others...,\n\t'angular2-select': 'node_modules/angular2-select'\n};\n\nvar packages = {\n\t// others...,\n\t'angular2-select': {\n\t\tmain: 'index.js',\n\t\tdefaultExtension: 'js'\n\t}\n};\n```\n\n### Usage\n\nImport the `SelectModule` and define it as one of the imports of your\napplication module:\n\n```typescript\nimport {NgModule} from '@angular/core';\nimport {BrowserModule} from '@angular/platform-browser';\nimport {ReactiveFormsModule} from '@angular/forms';\nimport {SelectModule} from 'angular2-select';\n\nimport {AppComponent} from './app.component';\n\n@NgModule({\n    imports: [\n        BrowserModule,\n        ReactiveFormsModule,\n        SelectModule\n    ],\n    declarations: [\n        AppComponent\n    ],\n    bootstrap: [\n        AppComponent\n    ]\n})\nexport class AppModule { }\n```\n\n\nAdd the following HTML to the component template in which you want to use the\nselect component:\n\n```html\n<ng-select\n\t[options]=\"options\">\n</ng-select>\n```\n\nWithin the component class you have to set the list of select options. This must\nbe a list of objects, with for each object a value (option identifier) and a\nlabel (which the user sees in the select drop down).\n\n```typescript\nexport class YourComponent {\n\n    options = [\n\t\t{\n\t\t\tvalue: 'a',\n\t\t\tlabel: 'Alpha'\n\t\t},\n\t\t{\n\t\t\tvalue: 'b',\n\t\t\tlabel: 'Beta'\n\t\t},\n\t\t{\n\t\t\tvalue: 'c',\n\t\t\tlabel: 'Gamma'\n\t\t}\n\t];\n}\n```\n\n## Use in forms\n\nThe component can be used in an angular 2 form, just like you would use regular\n`input` or `select` elements (the `angular2-select` component implements the\n[ControlValueAccessor] interface).\n\n```typescript\nimport {Component, OnInit} from '@angular/core';\nimport {FormControl, FormGroup} from '@angular/forms';\n\n@Component({\n    selector: 'my-app',\n    template: `\n<h1>Angular 2 select demo app</h1>\n<form\n    [formGroup]=\"form\">\n    <ng-select\n        [options]=\"options\"\n        placeholder=\"Select one\"\n\t\tmultiple=\"false\"\n        allowClear=\"true\"\n        formControlName=\"select\">\n    </ng-select>\n</form>\n<hr>\n<div>\n    Selected option id: {{form.value.select}}\n</div>`\n})\n\nexport class App implements OnInit {\n\n    form: FormGroup;\n\n    options = [];\n        \n    constructor() {\n        this.options = [\n            {\n                value: 'a',\n                label: 'Alpha'\n            },\n            {\n                value: 'b',\n                label: 'Beta'\n            },\n            {\n                value: 'c',\n                label: 'Gamma'\n            }\n        ];\n    }\n\n    ngOnInit() {\n        this.form = new FormGroup({});\n        this.form.addControl('select', new FormControl(''));\n    }\n}\n```\n\n## Parameters\n\nNext to the obligatory `options` parameter, the `ng-select` tag supports the\nfollowing optional parameters:\n\n```html\n<ng-select\n\t[options]=\"options\"\n\tmultiple=\"true\"\n    placeholder=\"Select an option\"\n    allowClear=\"true\"\n    theme=\"default\">\n</ng-select>\n\n```\n\nThe optional parameters can also be bound to a variable in the component's\nclass.\n\n```html\n<ng-select\n\t[options]=\"options\"\n\tmultiple=\"true\"\n    [placeholder]=\"placeholder\"\n    [allowClear]=\"canClearSelect\"\n    theme=\"default\">\n</ng-select>\n\n```\n\n```typescript\nexport class YourComponent implements {\n\n    placeholder: string = 'Select an option';\n    canClearSelect: boolean = true;\n    // ...\n}\n```\n\nOptional parameters will be set to their default value if they are not defined\nin the `ng-select` tag.\n\n### multiple\n\n*default: 'false'*\n\nA boolean to choose between single and multi-select.\n\n### placeholder\n\n*default: ''*\n\nThe placeholder value is shown if no option is selected.\n\n### allowClear\n\n*default: 'false'*\n\nIf set to true, a button with a cross that can be used to clear the currently\nselected option is shown if an option is selected.\n\n### theme\n\n*default: 'default'*\n\nCurrently the original `select2` CSS is used, which allows you to select between\nto themed looks, `default` and `classic`.\n\n## Not yet supported\n\nSelect2 features that are currently not supported are:\n\n- Tests\n- Option groups\n- Loading remote data\n- Disabled mode\n- Disabled results\n- Multiselect\n    - Limit the number of selections\n    - Tagging\n- Localization, RTL\n- Themes\n- Templates\n\n## Develop\n\nClone or fork the repository and run:\n\n```\nnpm install\ngulp build\n```\n\n[plunker]: https://plnkr.co/edit/JcG8uO9nIfSGMEKdLf0Y?p=preview\n[angular2-select-demo]: https://github.com/basvandenberg/angular2-select-demo\n[ControlValueAccessor]: https://angular.io/docs/ts/latest/api/common/index/ControlValueAccessor-interface.html\n[issue]: https://gitlab.com/pushrocks/beautylog/issues/7\n[beautylog]: https://gitlab.com/pushrocks/beautylog\n\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basvandenberg/angular2-select.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0-alpha.4"
 }
