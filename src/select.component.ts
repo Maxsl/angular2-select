@@ -4,10 +4,11 @@ import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 import {DEFAULT_STYLES} from './style';
 import {SelectDropdownComponent} from './select-dropdown.component';
 
-export const SELECT_VALUE_ACCESSOR = new Provider(NG_VALUE_ACCESSOR, {
+export const SELECT_VALUE_ACCESSOR = {
+    provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => SelectComponent),
     multi: true
-});
+};
 
 @Component({
     selector: 'ng-select',

@@ -12,10 +12,11 @@ var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
 var style_1 = require('./style');
 var select_dropdown_component_1 = require('./select-dropdown.component');
-exports.SELECT_VALUE_ACCESSOR = new core_1.Provider(forms_1.NG_VALUE_ACCESSOR, {
+exports.SELECT_VALUE_ACCESSOR = {
+    provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return SelectComponent; }),
     multi: true
-});
+};
 var SelectComponent = (function () {
     function SelectComponent() {
         this.S2 = 'select2';
