@@ -311,6 +311,10 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
         this.selection = s;
         this.value = v;
 
+        this.onValueSelected.emit({
+            value: v
+        });
+
         // TODO first check if value has changed?
         this.onChange(this.getOutputValue());
     }

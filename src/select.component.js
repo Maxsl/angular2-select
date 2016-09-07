@@ -175,6 +175,9 @@ var SelectComponent = (function () {
         }
         this.selection = s;
         this.value = v;
+        this.onValueSelected.emit({
+            value: v
+        });
         this.onChange(this.getOutputValue());
     };
     SelectComponent.prototype.popSelect = function () {
