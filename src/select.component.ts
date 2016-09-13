@@ -8,7 +8,7 @@ export const SELECT_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => SelectComponent),
     multi: true
-};
+}; 
 
 @Component({
     selector: 'ng-select',
@@ -108,6 +108,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
 
     @Output() public onClick: EventEmitter<any> = new EventEmitter();
     @Output() public onValueSelected: EventEmitter<any> = new EventEmitter();
+    @Output() public onClearSelection: EventEmitter<any> = new EventEmitter();
 
     @ViewChild('container') container: any;
     @ViewChild('selectionSpan') selectionSpan: any;
@@ -333,6 +334,10 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
         }
         this.selection = [];
         this.value = [];
+
+        this.onClearSelection.emit({
+            clear: true
+        });
 
         // TODO first check if value has changed?
         this.onChange(this.getOutputValue());

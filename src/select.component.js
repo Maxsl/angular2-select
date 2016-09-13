@@ -24,6 +24,7 @@ var SelectComponent = (function () {
         this.S2_SELECTION = this.S2 + '-selection';
         this.onClick = new core_1.EventEmitter();
         this.onValueSelected = new core_1.EventEmitter();
+        this.onClearSelection = new core_1.EventEmitter();
         this.isDisabled = false;
         this.isBelow = true;
         this.isOpen = false;
@@ -193,6 +194,9 @@ var SelectComponent = (function () {
         }
         this.selection = [];
         this.value = [];
+        this.onClearSelection.emit({
+            clear: true
+        });
         this.onChange(this.getOutputValue());
     };
     SelectComponent.prototype.getOutputValue = function () {
@@ -357,6 +361,10 @@ var SelectComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], SelectComponent.prototype, "onValueSelected", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], SelectComponent.prototype, "onClearSelection", void 0);
     __decorate([
         core_1.ViewChild('container'), 
         __metadata('design:type', Object)
