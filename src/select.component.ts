@@ -10,7 +10,7 @@ export const SELECT_VALUE_ACCESSOR = {
     multi: true
 }; 
 
-@Component({
+@Component({ 
     selector: 'ng-select',
     template: `
 <div style="width:100%;position:relative;">
@@ -27,20 +27,18 @@ export const SELECT_VALUE_ACCESSOR = {
                 (keydown)="onKeydown($event)">
 
                 <span class="select2-selection__rendered"
-                    *ngIf="!multiple">
-                    <span class="select2-selection__placeholder">
-                        {{getPlaceholder()}}
-                    </span>
-                </span>
-
-                <span class="select2-selection__rendered"
-                    *ngIf="!multiple && selection.length > 0">
+                    *ngIf="!multiple && (selection.length > 0 || placeholder)">
                     <span class="select2-selection__clear"
                         *ngIf="allowClear"
                         (click)="onClearAllClick($event)">
                         x
                     </span>
-                    {{selection[0].label}}
+                    <span *ngIf="selection[0]">
+                        {{selection[0]?.label}}
+                    </span>
+                    <span *ngIf="selection[0] == null">
+                        {{getPlaceholder()}}
+                    </span>
                 </span>
 
                 <ul class="select2-selection__rendered"
