@@ -225,13 +225,14 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
             opts[option.value] = {
                 value: option.value,
                 label: option.label,
-                selected: false
+                selected: option.selected
             };
             values.push(option.value);
         }
 
         this.optionValues = values;
         this.optionsDict = opts;
+        this.updateSelection();
     }
 
     initDefaults() {
