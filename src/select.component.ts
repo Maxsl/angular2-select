@@ -8,9 +8,9 @@ export const SELECT_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => SelectComponent),
     multi: true
-}; 
+};
 
-@Component({ 
+@Component({
     selector: 'ng-select',
     template: `
 <div style="width:100%;position:relative;">
@@ -220,6 +220,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
     initOptions() {
         let values: any[] = [];
         let opts = {};
+        let hasPreselection = false;
 
         for (let option of this.options) {
             opts[option.value] = {
@@ -227,12 +228,14 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
                 label: option.label,
                 selected: option.selected
             };
+            hasPreselection = option.selected || hasPreselection;
             values.push(option.value);
         }
 
         this.optionValues = values;
         this.optionsDict = opts;
-        this.updateSelection();
+        if(hasPreselection)
+            this.updateSelection();
     }
 
     initDefaults() {
@@ -519,7 +522,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
             width = 200;
         }
         else if (this.showPlaceholder() &&
-                 this.searchInput.nativeElement.value.length === 0 ) {
+            this.searchInput.nativeElement.value.length === 0 ) {
 
             width = 10 + 10 * this.placeholder.length;
         }
