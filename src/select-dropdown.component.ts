@@ -13,6 +13,7 @@ import {DiacriticsService} from './diacritics.service';
             *ngIf="!multiple">
             <input class="select2-search__field"
                 #input
+                autocomplete="off"
                 (input)="onInput($event)"
                 (keydown)="onKeydown($event)"
                 (click)="onInputClick($event)">
